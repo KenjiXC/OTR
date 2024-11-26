@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Stumble Guys</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(0,0,0);
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(121,9,117,1) 50%, rgba(111,0,255,1) 100%);
+        }
+
+        /* Container for Centering Everything */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Reduced gap for ultra-compact layout */
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(35, 29, 51, 0.6); /* Transparent background for the glass effect */
+            box-shadow: 0 0 15px 10px rgba(35, 29, 51, 0.6); /* Glassy, blurred darkviolet border */
+        }
+
+        /* Text Above Buttons */
+        .credits {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 8px white;
+            margin-bottom: 5px; /* Smaller margin */
+        }
+
+        .credits span {
+            color: rgb(255, 108, 108);
+            text-shadow: 0 0 5px rgb(252, 71, 71);
+        }
+
+        /* Discord Button */
+        .discord-container {
+            background-color: #333;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px; /* Smaller margin */
+        }
+
+        .discord-container:hover {
+            background-color: #444;
+        }
+
+        .discord-container a {
+            text-decoration: none;
+        }
+
+        .discord-logo {
+            width: 30px;
+            height: 30px;
+            background: url('discord.logo.png') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Support Us Text */
+        .support-us {
+            font-size: 18px; /* Slightly smaller font size */
+            display: flex;
+            gap: 3px; /* Tighter spacing between words */
+            align-items: center;
+            margin-bottom: 10px; /* Smaller margin before buttons */
+        }
+
+        .support-us .support {
+            color: cyan;
+            text-shadow: 0 0 8px cyan;
+        }
+
+        .support-us .us {
+            color: white;
+            text-shadow: 0 0 8px white;
+        }
+
+        /* Buttons Styling */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Vertical layout */
+            gap: 15px; /* Smaller gap between buttons */
+        }
+
+        .button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            width: 250px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgba(50, 50, 50, 0.9);
+            transform: scale(1.05);
+        }
+
+        .button span {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: cyan;
+            text-shadow: 0 0 5px cyan;
+        }
+
+        .button .android-only {
+            font-size: 14px;
+            color: lime;
+            text-shadow: 0 0 8px limegreen;
+        }
+
+        /* Spinner */
+        .spinner {
+            border: 6px solid rgba(255, 255, 255, 0.3); /* Thicker border */
+            border-top: 6px solid darkviolet; /* Thicker border */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            display: none; /* Hidden initially */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Made by Kenji Text -->
+        <div class="credits">
+            Made by <span>Kenji</span>
+        </div>
+
+        <!-- Discord Button -->
+        <div class="discord-container">
+            <a href="https://discord.gg/HUhVJJGR" target="_blank">
+                <div class="discord-logo"></div>
+            </a>
+        </div>
+
+        <!-- Support Us Text -->
+        <div class="support-us">
+            <span class="support">Support</span>
+            <span class="us">us!</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <!-- Mobile Button -->
+            <a href="https://www.mediafire.com/file/5pi7nhjto1h7t1b/stumble-guys-0-65_mod.apk/file?dkey=vmzfx7frnsd&r=884" target="_blank" class="button" onclick="showButtonSpinner(event, this)">
+                OG Stumble Guys
+                <span>[mobile]</span>
+                <span class="android-only">[ANDROID]</span>
+            </a>
+
+            <!-- PC Button -->
+            <a href="https://mega.nz/file/D3IzwYpT#OgYwR47IXtoclUQSYTQd9L_fwd16fwk0YABgEo3GW80" target="_blank" class="button" onclick="showButtonSpinner(event, this)">
+                OG Stumble Guys
+                <span>[PC]</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showButtonSpinner(event, button) {
+            event.preventDefault(); // Prevent the default behavior
+
+            // Hide the button's text
+            button.innerHTML = '';
+
+            // Create a spinner element
+            const spinner = document.createElement('div');
+            spinner.classList.add('spinner');
+
+            // Append the spinner to the button
+            button.appendChild(spinner);
+
+            // Show the spinner
+            spinner.style.display = 'block';
+
+            // Wait for 1.5 seconds before navigating
+            setTimeout(() => {
+                window.location.href = button.href;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
